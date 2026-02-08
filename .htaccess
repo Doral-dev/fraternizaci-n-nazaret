@@ -1,0 +1,22 @@
+Options -Indexes
+RewriteEngine On
+
+# Permitir index
+RewriteCond %{REQUEST_URI} !^/fraternidad/index\.php$ [NC]
+
+# Permitir register (POST)
+RewriteCond %{REQUEST_URI} !^/fraternidad/register\.php$ [NC]
+
+# Permitir 503
+RewriteCond %{REQUEST_URI} !^/fraternidad/503\.php$ [NC]
+
+# Permitir CSS
+RewriteCond %{REQUEST_URI} !^/fraternidad/styles\.css$ [NC]
+
+# Permitir assets (video, imágenes)
+RewriteCond %{REQUEST_URI} !^/fraternidad/assets/ [NC]
+
+# Bloquear todo lo demás
+RewriteRule ^ - [F]
+
+
